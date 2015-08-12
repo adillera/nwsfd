@@ -1,0 +1,21 @@
+<h1><%= t('navbar.my_feeds') %></h1>
+
+<%= form_for @user_feed, html: { class: 'form-inline' } do |f| %>
+  <%= f.label :available_rss_feeds, t('forms.available_rss_feeds') %>
+  <%= f.select :feed_id, options_from_collection_for_select(@feeds_collection, :id, :name), {}, class: 'form-control' %>
+  <%= f.submit t('forms.add_rss_feed'), class: 'btn btn-primary' %>
+<% end %>
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th class="col-md-1"><%= t('lists.actions') %></th>
+      <th class="col-md-2"><%= t('lists.name') %></th>
+      <th class="col-md-9"><%= t('lists.rss_url') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'user_feeds/feed', collection: @feeds %>
+  </tbody>
+</table>

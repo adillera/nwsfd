@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <%= link_to user_feed_path(feed.id), method: :delete, class: 'btn btn-default' do %>
+      <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+  <td><%= feed.name %></td>
+  <td><%= feed.rss_url %></td>
+</tr>

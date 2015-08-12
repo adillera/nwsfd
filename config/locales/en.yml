@@ -22,5 +22,18 @@
 en:
   navbar:
     dashboard: Dashboard
+    my_feeds: My feeds
     logout: Logout
     signed_in_as: Signed in as
+  forms:
+    available_rss_feeds: Available RSS feeds
+    add_rss_feed: Add RSS feed
+  flash:
+    successfully_added_rss_feed_to_the_list: Successfully added RSS feed to the list
+    could_not_add_rss_feed_to_the_list: An error occured and we cannot add the RSS feed to the list
+    successfully_deleted_rss_feed_from_the_list: Successfully deleted the RSS feed from the list
+    could_not_delete_the_rss_feed_from_the_list: An error occured and we cannot delete the RSS feed from the list
+  lists:
+    actions: Actions
+    name: Name
+    rss_url: RSS URL

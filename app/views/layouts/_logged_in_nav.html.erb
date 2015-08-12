@@ -6,6 +6,12 @@
           <i class="fa fa-home"></i> <%= t('navbar.dashboard') %>
         <% end %>
       </li>
+
+      <li class="<%= 'active' if active == 'user_feeds' %>">
+        <%= link_to user_feeds_path do %>
+          <i class="fa fa-rss"></i> <%= t('navbar.my_feeds') %>
+        <% end %>
+      </li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
