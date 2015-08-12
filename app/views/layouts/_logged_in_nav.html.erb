@@ -13,7 +13,7 @@
         <%= t('navbar.signed_in_as') %> <%= current_user.email %>
       </p>
 
-      <li class="<%= 'active' if active == 'dashboard' %>">
+      <li>
         <%= link_to destroy_user_session_path, method: :delete do %>
           <i class="fa fa-power-off"></i> <%= t('navbar.logout') %>
         <% end %>

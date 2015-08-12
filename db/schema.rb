@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811125300) do
+ActiveRecord::Schema.define(version: 20150812083902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feeds", force: :cascade do |t|
+    t.string   "name"
+    t.string   "rss_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_feeds", force: :cascade do |t|
+    t.integer  "feed_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_feeds", ["feed_id"], name: "index_user_feeds_on_feed_id", using: :btree
+  add_index "user_feeds", ["user_id"], name: "index_user_feeds_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +51,6 @@ ActiveRecord::Schema.define(version: 20150811125300) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "user_feeds", "feeds"
+  add_foreign_key "user_feeds", "users"
 end
