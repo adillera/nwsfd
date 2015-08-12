@@ -23,3 +23,4 @@ en:
   navbar:
     dashboard: Dashboard
     logout: Logout
+    signed_in_as: Signed in as
